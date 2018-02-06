@@ -2,9 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const prefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const babelQuery = require('./babelConfig');
 
-const BUILD_PATH = path.resolve(__dirname, 'dist');
+const BUILD_PATH = path.join(__dirname, 'dist');
 
 module.exports = {
   entry: [
@@ -56,6 +57,10 @@ module.exports = {
           prefixer()
         ]
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      chunksSortMode: 'dependency'
     })
   ],
   resolve: {
