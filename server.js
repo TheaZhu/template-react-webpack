@@ -1,7 +1,3 @@
-/**
- * @author zhuyaqin thea.zhu@foxmail.com
- */
-
 const path = require('path');
 const webpack = require('webpack'); // webpack核心
 const express = require('express'); //

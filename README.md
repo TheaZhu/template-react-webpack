@@ -1,1 +1,1 @@
-# hero
+# template-react-webpack

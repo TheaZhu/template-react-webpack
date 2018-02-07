@@ -2,8 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const prefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const babelQuery = require('./babelConfig');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const BUILD_PATH = path.join(__dirname, 'dist');
 
@@ -22,10 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: [{
-          loader: 'babel-loader',
-          options: babelQuery
-        }],
+        loader: 'babel-loader',
         include: path.join(__dirname, 'src')
       }, {
         test: /\.css$/,

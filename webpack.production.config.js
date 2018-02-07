@@ -1,13 +1,8 @@
-/**
- * @author zhuyaqin thea.zhu@foxmail.com
- */
-
 const path = require('path'); // 为了得到项目根路径
 const webpack = require('webpack'); // webpack核心
 const prefixer = require('autoprefixer');  // 自动添加css前缀
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const babelQuery = require('./babelConfig');
 
 const APP_PATH = path.join(__dirname, 'src');
 const APP_FILE = path.join(APP_PATH, 'index');
@@ -28,12 +23,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.(js|jsx)$/,
-      use: [
-        {
-          loader: 'babel-loader',
-          options: babelQuery
-        }
-      ],
+      loader: 'babel-loader',
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
